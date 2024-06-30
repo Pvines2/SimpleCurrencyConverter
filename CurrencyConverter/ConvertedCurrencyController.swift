@@ -45,9 +45,10 @@ class ConvertedCurrenciesController: UIViewController {
                     if let rate = conversionRates[currencyKeys[index]] {
                         let convertedAmount = Double(amount) * rate
                         currencyLabels[index]?.text = "\(currencyKeys[index]): \(String(format: "%.2f", convertedAmount))"
+                        currencyLabels[index]?.isHidden = false
                     }
                 } else {
-                    currencyLabels[index]?.text = ""
+                    currencyLabels[index]?.isHidden = true
                 }
             }
         }
